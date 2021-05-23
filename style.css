@@ -14,6 +14,11 @@ body {
   list-style: 0;
   font-size: 16px;
   line-height: 1.5;
+  background-color: #e3e3e3;
+}
+
+.wrapper {
+  background-color: #fff;
 }
 
 .container {
@@ -47,15 +52,22 @@ p {
 .btn {
   border: none;
   color: #fff;
-  padding: 0.6rem 1.2rem;
+  padding: 0.6rem 1.5rem;
   background: linear-gradient(to right, hsl(136, 65%, 51%), hsl(192, 70%, 51%));
   border-radius: 1.2rem;
+  transition: opacity 0.4s ease;
+}
+
+.btn:hover {
+  opacity: 0.7;
 }
 
 .wrapper {
   max-width: 1500px;
   width: 100%;
   overflow-x: hidden;
+  margin: 0 auto;
+  box-shadow: 10px 10px 5px 6px #ccc;
 }
 
 header {
@@ -70,6 +82,7 @@ header .navbar {
   width: 100%;
   z-index: 2;
   background-color: white;
+  max-width: 1500px;
 }
 
 header .navbar .container {
@@ -127,13 +140,21 @@ header .navbar .container {
   margin-left: 100px;
 }
 
+.side-image .intro-mobile {
+  display: none;
+}
+
 .design {
   position: absolute;
-  width: 140%;
+  width: 150%;
   right: 0;
   top: 0;
   z-index: -1;
-  margin-left: 60px;
+  /* margin-left: 60px; */
+}
+
+.side-image .intro-desktop {
+  transform: translateX(100px);
 }
 
 #services {
@@ -195,9 +216,19 @@ footer {
   padding: 2rem 0;
 }
 
+footer .logo {
+  filter: invert(100%);
+}
+
 #footer .container {
   display: grid;
   grid-template-columns: auto auto auto;
+}
+
+#footer .container .col-1 .social-box {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
 }
 
 #footer .container .col-3 {
@@ -242,6 +273,10 @@ footer {
 }
 
 @media (max-width: 667px) {
+  .navbar .container {
+    width: 80%;
+  }
+
   header {
     height: auto;
   }
@@ -260,7 +295,7 @@ footer {
     transition: transform 0.5s ease-in;
   }
 
-  .navbar.active .nav {
+  .navbar.inactive .nav {
     transform: scaleY(0);
   }
   .navbar .nav ul li {
@@ -283,6 +318,10 @@ footer {
     width: 70%;
   }
 
+  .side-text h1 {
+    font-size: 2rem;
+  }
+
   #article .container .cards {
     grid-template-columns: auto;
   }
@@ -297,6 +336,21 @@ footer {
     text-align: center;
   }
 
+  #services .container p.finances {
+    width: 100%;
+  }
+
+  .side-image .intro-mobile {
+    display: block;
+  }
+  .side-image .intro-desktop {
+    display: none;
+  }
+
+  .side-image img {
+    margin-left: 40px;
+    width: 130%;
+  }
   .side-text {
     text-align: center;
   }
@@ -339,7 +393,24 @@ footer {
     display: flex;
   }
 
-  .navbar.active .menu-overlay {
+  .navbar.inactive .menu-overlay {
     opacity: 0;
+  }
+
+  #article .title {
+    text-align: center;
+  }
+  #services .container {
+    text-align: center;
+  }
+
+  #footer .col-1,
+  #footer .col-2,
+  #footer .btn {
+    margin-bottom: 1rem;
+  }
+
+  #footer .container .col-1 .social-box {
+    width: 100%;
   }
 }
