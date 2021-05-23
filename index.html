@@ -32,18 +32,21 @@
         <nav class="navbar">
           <div class="container">
             <div class="logo"><img src="images/logo.svg" alt="" /></div>
-            <div class="nav">
-              <ul class="navlists">
-                <li><a href="#" class="navlinks">Home</a></li>
-                <li><a href="#" class="navlinks">About</a></li>
-                <li><a href="#" class="navlinks">Contact</a></li>
-                <li><a href="#" class="navlinks">Blog</a></li>
-                <li><a href="#" class="navlinks">Careers</a></li>
-              </ul>
+            <div class="menu-overlay">
+              <div class="nav">
+                <ul class="navlists">
+                  <li><a href="#" class="navlinks">Home</a></li>
+                  <li><a href="#" class="navlinks">About</a></li>
+                  <li><a href="#" class="navlinks">Contact</a></li>
+                  <li><a href="#" class="navlinks">Blog</a></li>
+                  <li><a href="#" class="navlinks">Careers</a></li>
+                </ul>
+              </div>
             </div>
+
             <div class="navbtn">
               <button class="btn"><a href="#">Request Invite</a></button>
-              <div class="toggler">
+              <div class="toggler" onclick="toggleMenu()">
                 <img src="images/icon-hamburger.svg" alt="" />
               </div>
             </div>
@@ -194,5 +197,14 @@
         >Frontend Mentor</a
       >. Coded by <a href="https://twitter.com/Simon_ceeril">Simon</a>.
     </div>
+
+    <script>
+      const menu = document.querySelector(".nav");
+      const nav = document.querySelector("nav");
+
+      function toggleMenu() {
+        nav.classList.toggle("active");
+      }
+    </script>
   </body>
 </html>
